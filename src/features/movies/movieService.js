@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Configuración de la URL base para la API
-const API_URL = 'http://localhost:5000/api/v1/movies/';
+const API_URL = `${import.meta.env.VITE_BACKEND_URL}/api/v1/movies/`;
 
 // Crear una nueva película
 const createMovie = async (movieData, token) => {

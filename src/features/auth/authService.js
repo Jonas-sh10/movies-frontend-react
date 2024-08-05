@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/v1/users/";
+// Usa la variable de entorno para definir la URL base
+const API_URL = `${import.meta.env.VITE_BACKEND_URL}/api/v1/users/`;
 
 // Registrar Usuario
 const register = async (userData) => {

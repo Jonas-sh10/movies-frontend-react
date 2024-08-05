@@ -19,6 +19,7 @@ const UpdateMovie = () => {
     vote_count: "",
     popularity: "",
     genre_ids: [],
+    trailer_url: "", // Añadir trailer_url
   });
 
   const { user } = useSelector((state) => state.auth);
@@ -39,7 +40,7 @@ const UpdateMovie = () => {
     return () => {
       dispatch(reset()); // Limpiar el estado cuando se desmonte el componente
     };
-  }, [dispatch, navigate, user]);
+  }, [dispatch, navigate, user, isError, message]);
 
   useEffect(() => {
     if (movies.length > 0) {
@@ -58,6 +59,7 @@ const UpdateMovie = () => {
           vote_count: movieToEdit.vote_count,
           popularity: movieToEdit.popularity,
           genre_ids: movieToEdit.genre_ids,
+          trailer_url: movieToEdit.trailer_url || "", // Manejar trailer_url
         });
       }
     }
